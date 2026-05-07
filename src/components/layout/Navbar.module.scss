@@ -2,36 +2,41 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: var(--color-bg);
-  border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-nav-bg);
   backdrop-filter: blur(10px);
 
   .inner {
-    max-width: 1280px;
+    max-width: 1700px;
     margin: 0 auto;
     padding: 0 40px;
-    height: 60px;
+    height: 90px;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
   .logo {
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
     color: var(--color-primary);
     cursor: pointer;
   }
 
+  .right {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+  }
+
   .menu {
     display: flex;
-    gap: 60px;
+    gap: 40px;
     list-style: none;
     margin: 0;
     padding: 0;
 
     li a {
-      font-size: 15px;
+      font-size: 20px;
       font-weight: bold;
       color: var(--color-text-secondary);
       text-decoration: none;
@@ -40,9 +45,10 @@
       &:hover {
         color: var(--color-primary);
       }
-       &.active {
-      color: var(--color-primary);
-    }
+
+      &.active {
+        color: var(--color-primary);
+      }
     }
   }
 
@@ -53,13 +59,13 @@
   }
 
   .themeToggle {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     border: 1px solid var(--color-border);
     background: transparent;
     color: var(--color-text-primary);
-    font-size: 13px;
+    font-size: 18px;
     font-weight: 600;
     cursor: pointer;
     transition: border-color 0.2s;
@@ -74,7 +80,7 @@
     background: var(--color-primary);
     color: #fff;
     border-radius: 10px;
-    font-size: 15px;
+    font-size: 20px;
     font-weight: bold;
     text-decoration: none;
     transition: opacity 0.2s;
