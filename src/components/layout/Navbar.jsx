@@ -4,6 +4,20 @@ import styles from "./Navbar.module.scss";
 const Navbar = ({ theme, toggleTheme }) => {
   const [activeMenu, setActiveMenu] = useState("");
 
+  const handleMenuClick = (e, label, href) => {
+    e.preventDefault();
+    setActiveMenu(label);
+
+    const targetId = href.replace("#", "");
+    const element = document.getElementById(targetId);
+
+    if (element) {
+      const navHeight = 90;
+      const offsetPosition = element.getBoundingClientRect().top + window.scrollY - navHeight;
+      window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+    }
+  };
+
   return (
     <nav className={styles.navbar}>
       <div className={styles.inner}>
@@ -21,7 +35,7 @@ const Navbar = ({ theme, toggleTheme }) => {
 
                 <a href={item.href}
                   className={activeMenu === item.label ? styles.active : ""}
-                  onClick={() => setActiveMenu(item.label)}
+                  onClick={(e) => handleMenuClick(e, item.label, item.href)}
                 >
                   {item.label}
                 </a>
