@@ -1,6 +1,29 @@
+import { useEffect, useState } from "react";
 import styles from "./Hero.module.scss";
 
+const codeLines = [
+  { parts: [{ cls: "kw", text: "const " }, { cls: "fn", text: "developer" }, { cls: "pl", text: " = {" }] },
+  { parts: [{ cls: "tx", text: " name" }, { cls: "pl", text: ": " }, { cls: "str", text: "'정예준'" }, { cls: "pl", text: "," }] },
+  { parts: [{ cls: "tx", text: " role" }, { cls: "pl", text: ": " }, { cls: "str", text: "'풀스택 개발자'" }, { cls: "pl", text: "," }] },
+  { parts: [{ cls: "tx", text: " stack" }, { cls: "pl", text: ": [" }] },
+  { parts: [{ cls: "str", text: " 'React'" }, { cls: "pl", text: ", " }, { cls: "str", text: "'Node.js'" }, { cls: "pl", text: "," }] },
+  { parts: [{ cls: "str", text: " 'TypeScript'" }, { cls: "pl", text: ", " }, { cls: "str", text: "'Python'" }] },
+  { parts: [{ cls: "pl", text: " ]," }] },
+  { parts: [{ cls: "tx", text: " passion" }, { cls: "pl", text: ": " }, { cls: "str", text: "'UX & 클린코드'" }] },
+  { parts: [{ cls: "pl", text: "}" }] },
+];
+
 const Hero = () => {
+  const [visibleLines, setVisibleLines] = useState(0);
+
+  useEffect(() => {
+    if (visibleLines >= codeLines.length) return;
+    const timer = setTimeout(() => {
+      setVisibleLines((prev) => prev + 1);
+    }, 180);
+    return () => clearTimeout(timer);
+  }, [visibleLines]);
+
   return (
     <section className={styles.hero}>
       <div className={styles.inner}>
@@ -14,12 +37,8 @@ const Hero = () => {
             개발자 <span className={styles.name}>정예준</span> 입니다.
           </h1>
           <div className={styles.btns}>
-            <a href="#projects" className={styles.btnPrimary}>
-              작업물 보기
-            </a>
-            <a href="#contact" className={styles.btnSecondary}>
-              연락하기
-            </a>
+            <a href="#projects" className={styles.btnPrimary}>작업물 보기</a>
+            <a href="#contact" className={styles.btnSecondary}>연락하기</a>
           </div>
         </div>
 
@@ -32,58 +51,20 @@ const Hero = () => {
               <span className={styles.filename}>portfolio.js</span>
             </div>
             <div className={styles.code}>
-              <div>
-                <span className={styles.ln}>1</span>
-                <span className={styles.kw}>const </span>
-                <span className={styles.fn}>developer</span>
-                <span className={styles.pl}> = {"{"}</span>
-              </div>
-              <div>
-                <span className={styles.ln}>2</span>
-                <span className={styles.tx}> name</span>
-                <span className={styles.pl}>: </span>
-                <span className={styles.str}>'정예준'</span>
-                <span className={styles.pl}>,</span>
-              </div>
-              <div>
-                <span className={styles.ln}>3</span>
-                <span className={styles.tx}> role</span>
-                <span className={styles.pl}>: </span>
-                <span className={styles.str}>'풀스택 개발자'</span>
-                <span className={styles.pl}>,</span>
-              </div>
-              <div>
-                <span className={styles.ln}>4</span>
-                <span className={styles.tx}> stack</span>
-                <span className={styles.pl}>: [</span>
-              </div>
-              <div>
-                <span className={styles.ln}>5</span>
-                <span className={styles.str}> 'React'</span>
-                <span className={styles.pl}>, </span>
-                <span className={styles.str}>'Node.js'</span>
-                <span className={styles.pl}>,</span>
-              </div>
-              <div>
-                <span className={styles.ln}>6</span>
-                <span className={styles.str}> 'TypeScript'</span>
-                <span className={styles.pl}>, </span>
-                <span className={styles.str}>'Python'</span>
-              </div>
-              <div>
-                <span className={styles.ln}>7</span>
-                <span className={styles.pl}> ],</span>
-              </div>
-              <div>
-                <span className={styles.ln}>8</span>
-                <span className={styles.tx}> passion</span>
-                <span className={styles.pl}>: </span>
-                <span className={styles.str}>'UX & 클린코드'</span>
-              </div>
-              <div>
-                <span className={styles.ln}>9</span>
-                <span className={styles.pl}>{"}"}</span>
-              </div>
+              {codeLines.slice(0, visibleLines).map((line, i) => (
+                <div key={i} className={styles.codeLine}>
+                  <span className={styles.ln}>{i + 1}</span>
+                  {line.parts.map((part, j) => (
+                    <span key={j} className={styles[part.cls]}>{part.text}</span>
+                  ))}
+                </div>
+              ))}
+              {visibleLines < codeLines.length && (
+                <div className={styles.codeLine}>
+                  <span className={styles.ln}>{visibleLines + 1}</span>
+                  <span className={styles.cursor}>|</span>
+                </div>
+              )}
             </div>
           </div>
         </div>
