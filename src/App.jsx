@@ -6,6 +6,9 @@ import ScrollToTop from './components/ui/ScrollToTop'
 import Skills from './components/sections/Skills'
 import Projects from './components/sections/Projects'
 import MiniProjects from './components/sections/MiniProjects'
+import Contact from './components/sections/Contact'
+import Footer from './components/layout/Footer'
+
 
 const App = () => {
   const [theme, setTheme] = useState('light')
@@ -26,6 +29,8 @@ const App = () => {
       <Skills />
       <Projects />
       <MiniProjects />
+      <Contact />
+      <Footer />
       <ScrollToTop />
     </div>
   )

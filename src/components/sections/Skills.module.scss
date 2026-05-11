@@ -1,5 +1,4 @@
 .skills {
-  border-top: 1px solid #000;
   padding: 100px 0;
 
   .inner {
@@ -85,7 +84,7 @@
 
 .badge {
   padding: 10px 16px;
-  background: var(--color-surface);
+  background: var(--color-info-bg);
   border: 1px solid var(--color-border);
   border-radius: 4px;
   font-size: 25px;
