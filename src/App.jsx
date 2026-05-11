@@ -4,6 +4,7 @@ import Hero from './components/sections/Hero'
 import About from './components/sections/About'
 import ScrollToTop from './components/ui/ScrollToTop'
 import Skills from './components/sections/Skills'
+import Projects from './components/sections/Projects'
 
 const App = () => {
   const [theme, setTheme] = useState('light')
@@ -21,8 +22,9 @@ const App = () => {
       <Navbar theme={theme} toggleTheme={toggleTheme} />
       <Hero />
       <About />
-      <ScrollToTop />
       <Skills />
+      <Projects />
+      <ScrollToTop />
     </div>
   )
 }

@@ -21,7 +21,11 @@ const Navbar = ({ theme, toggleTheme }) => {
   return (
     <nav className={styles.navbar}>
       <div className={styles.inner}>
-        <div className={styles.logo}>JYJ's Portfolio</div>
+        <div className={styles.logo} onClick={() => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }}>
+          JYJ's Portfolio
+        </div>
 
         <div className={styles.right}>
           <ul className={styles.menu}>
