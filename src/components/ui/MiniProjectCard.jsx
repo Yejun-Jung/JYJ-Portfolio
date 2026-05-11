@@ -39,10 +39,10 @@ const icons = {
 };
 
 const MiniProjectCard = ({ project }) => {
-  const { category, title, description, tags, githubUrl, icon, iconColor } = project;
+  const { category, title, description, tags, vercelUrl, icon, iconColor } = project;
 
   return (
-    <a href={githubUrl} target="_blank" rel="noreferrer" className={styles.card}>
+    <a href={vercelUrl} target="_blank" rel="noreferrer" className={styles.card}>
       <div className={styles.top}>
         <div className={styles.iconBox} style={{ color: iconColor }}>
           {icons[icon]}
