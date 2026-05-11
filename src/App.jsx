@@ -5,6 +5,7 @@ import About from './components/sections/About'
 import ScrollToTop from './components/ui/ScrollToTop'
 import Skills from './components/sections/Skills'
 import Projects from './components/sections/Projects'
+import MiniProjects from './components/sections/MiniProjects'
 
 const App = () => {
   const [theme, setTheme] = useState('light')
@@ -24,6 +25,7 @@ const App = () => {
       <About />
       <Skills />
       <Projects />
+      <MiniProjects />
       <ScrollToTop />
     </div>
   )

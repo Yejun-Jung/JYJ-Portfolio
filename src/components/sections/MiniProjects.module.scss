@@ -1,0 +1,44 @@
+.miniProjects {
+  background-color: var(--color-bg);
+  padding: 100px 0;
+
+  .inner {
+    max-width: 1700px;
+    height: 700px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.title {
+  font-size: 45px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  margin: 0;
+  white-space: nowrap;
+}
+
+.line {
+  flex: 1;
+  height: 1px;
+  background: var(--color-border);
+}
+
+.sub {
+  font-size: 25px;
+  color: var(--color-text-primary);
+  margin: 0 0 48px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
