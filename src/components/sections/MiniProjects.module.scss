@@ -4,7 +4,7 @@
 
   .inner {
     max-width: 1700px;
-    height: 700px;
+    height: auto;
     margin: 0 auto;
     padding: 0 40px;
   }
@@ -41,4 +41,73 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+}
+
+// 큰 태블릿
+@media (max-width: 1300px) {
+  .miniProjects .inner {
+    padding: 0 24px;
+  }
+
+  .title {
+    font-size: 35px;
+  }
+
+  .sub {
+    font-size: 20px;
+  }
+
+  .grid {
+    gap: 15px;
+  }
+}
+
+// 태블릿
+@media (max-width: 1024px) {
+  .miniProjects {
+    padding: 80px 0;
+  }
+
+  .miniProjects .inner {
+    padding: 0 24px;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .sub {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}
+
+// 모바일
+@media (max-width: 768px) {
+  .miniProjects {
+    padding: 60px 0;
+  }
+
+  .miniProjects .inner {
+    padding: 0 20px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .sub {
+    font-size: 16px;
+    margin-bottom: 28px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
 }

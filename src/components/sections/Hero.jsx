@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import styles from "./Hero.module.scss";
 
 const codeLines = [
@@ -24,25 +25,61 @@ const Hero = () => {
     return () => clearTimeout(timer);
   }, [visibleLines]);
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.2, delayChildren: 0.1 }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 80, damping: 12 } }
+  };
+
+  const editorVariants = {
+    hidden: { opacity: 0, x: 50, scale: 0.95 },
+    visible: {
+      opacity: 1, x: 0, scale: 1,
+      transition: { type: "spring", bounce: 0.3, duration: 0.8, delay: 0.4 }
+    }
+  };
+
   return (
     <section className={styles.hero}>
       <div className={styles.inner}>
-        <div className={styles.left}>
-          <span className={styles.badge}>풀스택 개발자</span>
-          <h1 className={styles.title}>
+        <motion.div
+          className={styles.left}
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, margin: "0px 0px -100px 0px", amount: 0.1 }}
+        >
+          <motion.span variants={itemVariants} className={styles.badge}>
+            풀스택 개발자
+          </motion.span>
+          <motion.h1 variants={itemVariants} className={styles.title}>
             사용자 경험을 코드로
             <br />
             설계하는
             <br />
             개발자 <span className={styles.name}>정예준</span> 입니다.
-          </h1>
-          <div className={styles.btns}>
+          </motion.h1>
+          <motion.div variants={itemVariants} className={styles.btns}>
             <a href="#projects" className={styles.btnPrimary}>작업물 보기</a>
             <a href="#contact" className={styles.btnSecondary}>연락하기</a>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        <div className={styles.right}>
+        <motion.div
+          className={styles.right}
+          variants={editorVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, margin: "0px 0px -100px 0px", amount: 0.1 }}
+          onViewportEnter={() => setVisibleLines(0)}
+        >
           <div className={styles.editor}>
             <div className={styles.titlebar}>
               <span className={styles.dot} style={{ background: "#ff5f57" }} />
@@ -67,7 +104,7 @@ const Hero = () => {
               )}
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,4 +1,4 @@
-.card {
+  .card {
   background: var(--color-info-bg);
   border: 1px solid var(--color-border);
   border-radius: 14px;
@@ -73,4 +73,57 @@
   border-radius: 4px;
   padding: 5px 5px;
   color: var(--color-text-secondary);
+}
+
+// 큰 태블릿
+@media (max-width: 1300px) {
+  .iconBox {
+    width: 90px;
+    height: 90px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+}
+
+// 태블릿
+@media (max-width: 1024px) {
+  .iconBox {
+    width: 80px;
+    height: 80px;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
+  .category {
+    font-size: 11px;
+  }
+}
+
+// 모바일
+@media (max-width: 768px) {
+  .card {
+    padding: 18px;
+  }
+
+  .iconBox {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+  }
+
+  .title {
+    font-size: 15px;
+  }
+
+  .desc {
+    font-size: 12px;
+  }
+
+  .tag {
+    font-size: 10px;
+  }
 }

@@ -14,3 +14,15 @@
     margin: 0;
   }
 }
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 28px 20px;
+
+    p {
+      font-size: 0.75rem;
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+  }
+}

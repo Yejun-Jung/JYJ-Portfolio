@@ -25,7 +25,7 @@ const projectsData = [
       "반려견 프로필 등록부터 날짜별 타임라인까지 감성적인 경험을 제공합니다.",
       "Docker 기반 컨테이너 환경으로 안정적인 배포를 구현했습니다.",
     ],
-    tags: ["REACT", "DBEAVER", "DOCKER"],
+    tags: ["REACT", "DBEAVER", "DOCKER", "MYSQL", "AWS", "SPRING BOOT"],
     githubUrl: "https://github.com/Yejun-Jung/SimplePaws",
     liveUrl: "#",
     thumbType: "sp",

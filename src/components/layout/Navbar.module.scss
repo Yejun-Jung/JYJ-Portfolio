@@ -36,18 +36,20 @@
     padding: 0;
 
     li a {
+      display: inline-block;
       font-size: 20px;
       font-weight: bold;
       color: var(--color-text-secondary);
       text-decoration: none;
-      transition: color 0.2s;
+      transition: color 0.2s ease, transform 0.2s ease;
 
-      &:hover {
-        color: var(--color-primary);
+      &:hover { 
+        color: var(--color-primary); 
+        transform: translateY(-3px);
       }
-
-      &.active {
-        color: var(--color-primary);
+      &.active { 
+        color: var(--color-primary); 
+        transform: translateY(-3px);
       }
     }
   }
@@ -70,9 +72,7 @@
     cursor: pointer;
     transition: border-color 0.2s;
 
-    &:hover {
-      border-color: var(--color-primary);
-    }
+    &:hover { border-color: var(--color-primary); }
   }
 
   .resumeBtn {
@@ -85,8 +85,87 @@
     text-decoration: none;
     transition: opacity 0.2s;
 
-    &:hover {
-      opacity: 0.85;
+    &:hover { opacity: 0.85; }
+  }
+
+  .hamburger {
+    display: none;
+    background: transparent;
+    border: none;
+    color: var(--color-text-primary);
+    cursor: pointer;
+    padding: 4px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .navbar {
+    .inner {
+      padding: 0 24px;
+    }
+
+    .right {
+      gap: 24px;
+    }
+
+    .menu {
+      gap: 24px;
+
+      li a { font-size: 16px; }
+    }
+
+    .resumeBtn {
+      font-size: 16px;
+      padding: 8px 14px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    .inner {
+      padding: 0 20px;
+      position: relative;
+    }
+
+    .right {
+      gap: 12px;
+    }
+
+    .menu {
+      display: none;
+      position: absolute;
+      top: 90px;
+      left: 0;
+      right: 0;
+      background: var(--color-bg);
+      flex-direction: column;
+      gap: 0;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--color-border);
+
+      &.menuOpen {
+        display: flex;
+      }
+
+      li {
+        width: 100%;
+
+        a {
+          display: block;
+          padding: 14px 24px;
+          font-size: 16px;
+        }
+      }
+    }
+
+    .resumeBtn {
+      font-size: 14px;
+      padding: 6px 12px;
+    }
+
+    .hamburger {
+      display: flex;
     }
   }
 }

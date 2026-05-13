@@ -41,3 +41,62 @@
   flex-direction: column;
   gap: 24px;
 }
+
+// 큰 태블릿
+@media (max-width: 1300px) {
+  .projects .inner {
+    padding: 0 24px;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .sub {
+    font-size: 20px;
+  }
+}
+
+// 태블릿
+@media (max-width: 1024px) {
+  .projects {
+    padding: 80px 0;
+  }
+
+  .projects .inner {
+    padding: 0 24px;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .sub {
+    font-size: 18px;
+    margin-bottom: 36px;
+  }
+}
+
+// 모바일
+@media (max-width: 768px) {
+  .projects {
+    padding: 60px 0;
+  }
+
+  .projects .inner {
+    padding: 0 20px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .sub {
+    font-size: 16px;
+    margin-bottom: 28px;
+  }
+
+  .list {
+    gap: 16px;
+  }
+}
