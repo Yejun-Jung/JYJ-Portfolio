@@ -92,7 +92,6 @@
   }
 }
 
-// 큰 태블릿
 @media (max-width: 1300px) {
   .thumb {
     flex: 1.5;
@@ -117,13 +116,13 @@
   }
 }
 
-// 태블릿
 @media (max-width: 1024px) {
   .card {
     flex-direction: column;
   }
 
   .thumb {
+    order: 1;
     height: 220px;
     min-height: unset;
     max-height: unset;
@@ -138,6 +137,7 @@
   }
 
   .info {
+    order: 2;
     border-left: none;
     padding: 30px;
   }
@@ -155,9 +155,9 @@
   }
 }
 
-// 모바일
 @media (max-width: 768px) {
-   .thumb {
+  .thumb {
+    order: 1;
     height: 220px;
     min-height: unset;
     max-height: unset;
@@ -172,6 +172,7 @@
   }
 
   .info {
+    order: 2;
     padding: 20px;
   }
 
