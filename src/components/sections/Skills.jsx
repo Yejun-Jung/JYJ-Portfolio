@@ -5,7 +5,7 @@ const Skills = () => {
   const skillsData = [
     { id: "frontend", title: "FRONTEND", items: ["React.js", "Next.js", "Tailwind CSS", "SCSS"] },
     { id: "tools", title: "TOOLS", items: ["Figma", "Notion"] },
-    { id: "backend", title: "BACKEND", items: ["Node.js", "MySQL", "Docker"] },
+    { id: "backend", title: "BACKEND", items: ["Node.js", "MySQL", "Docker", "DBeaver"] },
     { id: "vcs", title: "VCS", items: ["GitHub"] },
     { id: "deployment", title: "DEPLOYMENT", items: ["Vercel"] }
   ];
