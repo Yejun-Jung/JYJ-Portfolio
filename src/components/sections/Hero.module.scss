@@ -1,0 +1,256 @@
+.hero {
+  background-color: var(--color-bg);
+  padding: 80px 0;
+
+  .inner {
+    max-width: 1700px;
+    height: auto;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+  }
+}
+
+.left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.badge {
+  display: inline-block;
+  background: var(--color-primary);
+  color: #fff;
+  border: 1px solid rgba(77, 50, 147, 0.35);
+  border-radius: 20px;
+  font-size: 15px;
+  padding: 7px 20px;
+  width: fit-content;
+}
+
+.title {
+  font-size: 60px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.name {
+  color: var(--color-primary);
+}
+
+.btns {
+  display: flex;
+  gap: 12px;
+}
+
+.btnPrimary {
+  padding: 12px 26px;
+  background: var(--color-primary);
+  color: #fff;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: opacity 0.2s;
+
+  &:hover { opacity: 0.85; }
+}
+
+.btnSecondary {
+  padding: 12px 26px;
+  background: transparent;
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: border-color 0.2s;
+
+  &:hover { border-color: var(--color-primary); }
+}
+
+.right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.editor {
+  background: var(--color-surface-editor);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  width: 700px;
+  height: 550px;
+  overflow: hidden;
+}
+
+.titlebar {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface-editor);
+}
+
+.dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.filename {
+  font-size: 25px;
+  color: var(--color-text-secondary);
+  font-family: 'Fira Code', monospace;
+  margin-left: 6px;
+}
+
+.code {
+  padding: 16px 20px;
+  font-family: 'Fira Code', monospace;
+  font-size: 27px;
+  line-height: 1.9;
+
+  .ln  { color: #3e3c5a; margin-right: 16px; font-size: 22px; user-select: none; }
+  .kw  { color: #A044DD; }
+  .fn  { color: #447EF9; }
+  .str { color: #16A34A; }
+  .pl  { color: #89ddff; }
+  .tx  { color: var(--color-text-primary); }
+}
+
+.codeLine {
+  animation: fadeSlideIn 0.25s ease forwards;
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.cursor {
+  display: inline-block;
+  color: var(--color-primary);
+  animation: blink 0.8s steps(1) infinite;
+  font-weight: 300;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@media (max-width: 1410px) {
+  .hero {
+    .inner {
+      height: auto;
+      padding: 60px 24px;
+      gap: 30px;
+    }
+  }
+
+  .title {
+    font-size: 46px;
+  }
+
+  .editor {
+    width: 600px;
+    height: 480px;
+  }
+
+  .filename {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero {
+    .inner {
+      flex-direction: column;
+      height: auto;
+      padding: 48px 24px;
+      gap: 40px;
+    }
+  }
+
+  .left {
+    width: 100%;
+  }
+
+  .title {
+    font-size: 44px;
+  }
+
+  .btnPrimary, .btnSecondary {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  .right {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .editor {
+    width: 100%;
+    height: 420px;
+  }
+
+  .filename {
+    font-size: 18px;
+  }
+
+  .code {
+    font-size: 18px;
+    .ln { font-size: 15px; }
+  }
+
+  .dot {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 34px;
+  }
+
+  .badge {
+    font-size: 13px;
+    padding: 6px 16px;
+  }
+
+  .btnPrimary, .btnSecondary {
+    font-size: 14px;
+    padding: 10px 18px;
+  }
+
+  .editor {
+    width: 100%;
+    height: 360px;
+  }
+
+  .filename {
+    font-size: 14px;
+  }
+
+  .code {
+    font-size: 14px;
+    padding: 12px 14px;
+    .ln { font-size: 12px; margin-right: 10px; }
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+}

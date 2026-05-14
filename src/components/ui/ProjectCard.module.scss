@@ -1,0 +1,193 @@
+.card {
+  display: flex;
+  align-items: stretch;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  overflow: hidden;
+  min-height: 320px;
+}
+
+.thumb {
+  flex: 1;
+  min-height: 280px;
+  overflow: hidden;
+}
+
+.thumbImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.info {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  padding: 30px;
+  background: var(--color-info-bg);
+}
+
+.tags {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-size: 17px;
+  font-weight: bold;
+  background-color: var(--color-tag);
+  border: 1.5px solid var(--color-tag-border);
+  border-radius: 4px;
+  padding: 7px;
+  color: #94A3B8;
+}
+
+.projTitle {
+  font-size: 45px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.desc {
+  font-size: 22px;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  margin: 0;
+}
+
+.linkRow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.viewLink {
+  font-size: 13px;
+  color: var(--color-primary);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+}
+
+.iconLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: border-color 0.2s;
+
+  &:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+}
+
+// 큰 태블릿
+@media (max-width: 1300px) {
+  .thumb {
+    flex: 1.5;
+    min-height: 280px;
+  }
+
+  .info {
+    flex: 1.5;
+    padding: 30px;
+  }
+
+  .projTitle {
+    font-size: 32px;
+  }
+
+  .desc {
+    font-size: 17px;
+  }
+
+  .tag {
+    font-size: 14px;
+  }
+}
+
+// 태블릿
+@media (max-width: 1024px) {
+  .card {
+    flex-direction: column;
+  }
+
+  .thumb {
+    height: 220px;
+    min-height: unset;
+    max-height: unset;
+  }
+
+  .thumbImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  .info {
+    border-left: none;
+    padding: 30px;
+  }
+
+  .projTitle {
+    font-size: 25px;
+  }
+
+  .desc {
+    font-size: 18px;
+  }
+
+  .viewLink {
+    font-size: 18px;
+  }
+}
+
+// 모바일
+@media (max-width: 768px) {
+   .thumb {
+    height: 220px;
+    min-height: unset;
+    max-height: unset;
+  }
+
+  .thumbImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  .info {
+    padding: 20px;
+  }
+
+  .projTitle {
+    font-size: 20px;
+  }
+
+  .desc {
+    font-size: 15px;
+  }
+
+  .tag {
+    font-size: 10px;
+  }
+
+  .viewLink {
+    font-size: 15px;
+  }
+}

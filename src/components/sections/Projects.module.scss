@@ -1,0 +1,102 @@
+.projects {
+  background-color: var(--color-bg);
+  padding: 100px 0;
+
+  .inner {
+    max-width: 1700px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.title {
+  font-size: 45px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  margin: 0;
+  white-space: nowrap;
+}
+
+.line {
+  flex: 1;
+  height: 1px;
+  background: var(--color-border);
+}
+
+.sub {
+  font-size: 25px;
+  color: var(--color-text-primary);
+  margin: 0 0 48px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+// 큰 태블릿
+@media (max-width: 1300px) {
+  .projects .inner {
+    padding: 0 24px;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .sub {
+    font-size: 20px;
+  }
+}
+
+// 태블릿
+@media (max-width: 1024px) {
+  .projects {
+    padding: 80px 0;
+  }
+
+  .projects .inner {
+    padding: 0 24px;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .sub {
+    font-size: 18px;
+    margin-bottom: 36px;
+  }
+}
+
+// 모바일
+@media (max-width: 768px) {
+  .projects {
+    padding: 60px 0;
+  }
+
+  .projects .inner {
+    padding: 0 20px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .sub {
+    font-size: 16px;
+    margin-bottom: 28px;
+  }
+
+  .list {
+    gap: 16px;
+  }
+}
