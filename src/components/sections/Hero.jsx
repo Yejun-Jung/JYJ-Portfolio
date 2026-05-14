@@ -7,9 +7,9 @@ const codeLines = [
   { parts: [{ cls: "tx", text: " name" }, { cls: "pl", text: ": " }, { cls: "str", text: "'정예준'" }, { cls: "pl", text: "," }] },
   { parts: [{ cls: "tx", text: " role" }, { cls: "pl", text: ": " }, { cls: "str", text: "'풀스택 개발자'" }, { cls: "pl", text: "," }] },
   { parts: [{ cls: "tx", text: " stack" }, { cls: "pl", text: ": [" }] },
-  { parts: [{ cls: "str", text: " 'React'" }, { cls: "pl", text: ", " }, { cls: "str", text: "'Node.js'" }, { cls: "pl", text: "," }] },
-  { parts: [{ cls: "str", text: " 'TypeScript'" }, { cls: "pl", text: ", " }, { cls: "str", text: "'Python'" }] },
-  { parts: [{ cls: "pl", text: " ]," }] },
+  { parts: [{ cls: "str", text: " 'React'" }, { cls: "pl", text: ", " }, { cls: "str", text: "'SCSS'" }, { cls: "pl", text: ", " }, { cls: "str", text: "'TailWind CSS'" }, { cls: "pl", text: "," }, { cls: "str", text: "'JavaScript'" }] }, 
+  { parts: [{ cls: "pl", text: "," }, { cls: "str", text: "'SpringBoot'" }, { cls: "pl", text: ", " }, { cls: "str", text : "'Node.js'" }, { cls: "str", text: " 'Next.js'" }, { cls: "pl", text: ", " }, { cls: "str", text: "'MySQL'" }] },
+  { parts: [{ cls: "pl", text: ", " }, { cls: "str", text: "'DBeaver'" }, { cls: "pl", text: ", " }, { cls: "str", text: "'Python'" },  { cls: "pl", text: " ]," }] },
   { parts: [{ cls: "tx", text: " passion" }, { cls: "pl", text: ": " }, { cls: "str", text: "'UX & 클린코드'" }] },
   { parts: [{ cls: "pl", text: "}" }] },
 ];
