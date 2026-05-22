@@ -27,7 +27,7 @@ const projectsData = [
     ],
     tags: ["REACT", "DBEAVER", "DOCKER", "MYSQL", "AWS", "SPRING BOOT","KAKAO_LOGIN", "VERCEL"],
     githubUrl: "https://github.com/Yejun-Jung/SimplePaws",
-    liveUrl: "#",
+    liveUrl: "http://simplepaws.kro.kr/",
     thumbType: "sp",
     direction: "right",
   },
