@@ -45,21 +45,19 @@ const Projects = () => {
         },
     };
 
-    // 카드 애니메이션 (인덱스에 따라 좌우 번갈아가며 등장 + 스프링 효과)
+    // 카드 애니메이션 (자연스럽고 과하지 않은 등장)
     const cardVariants = {
         hidden: (index) => ({
             opacity: 0,
-            x: index % 2 === 0 ? -50 : 50, // 짝수는 왼쪽(-50), 홀수는 오른쪽(50)에서 시작
             y: 30,
         }),
         visible: {
             opacity: 1,
-            x: 0,
             y: 0,
             transition: {
-                type: "spring", // 통통 튀는 스프링 효과
-                stiffness: 80,
-                damping: 12,
+                type: "spring", // 부드러운 스프링
+                stiffness: 70,
+                damping: 14,
                 mass: 1,
             },
         },
@@ -88,10 +86,10 @@ const Projects = () => {
                     {projectsData.map((project, index) => (
                         <motion.div
                             key={project.id}
-                            custom={index} // variants에 index 전달
+                            custom={index}
                             variants={cardVariants}
-                            whileHover={{ scale: 1.02 }} // 마우스 올렸을 때 살짝 커지는 효과
-                            whileTap={{ scale: 0.98 }}   // 클릭 시 살짝 작아지는 효과
+                            whileHover={{ y: -5, scale: 1.01 }} // 과하지 않게 살짝 떠오르는 효과
+                            whileTap={{ scale: 0.98 }}
                         >
                             <ProjectCard project={project} />
                         </motion.div>

@@ -3,9 +3,9 @@ import styles from "./Skills.module.scss";
 
 const Skills = () => {
   const skillsData = [
-    { id: "frontend", title: "FRONTEND", items: ["React.js", "Next.js", "Tailwind CSS", "SCSS"] },
+    { id: "frontend", title: "FRONTEND", items: ["React.js", "Next.js", "JavaScript", "Tailwind CSS", "SCSS"] },
     { id: "tools", title: "TOOLS", items: ["Figma", "Notion"] },
-    { id: "backend", title: "BACKEND", items: ["Node.js", "MySQL", "Docker", "DBeaver"] },
+    { id: "backend", title: "BACKEND", items: ["Python", "FastAPI", "Node.js", "MongoDB", "MySQL", "Docker", "DBeaver"] },
     { id: "vcs", title: "VCS", items: ["GitHub"] },
     { id: "deployment", title: "DEPLOYMENT", items: ["Vercel"] }
   ];
@@ -38,11 +38,11 @@ const Skills = () => {
   };
 
   const badgeVariants = {
-    hidden: { opacity: 0, scale: 0.5 },
+    hidden: { opacity: 0, scale: 0.8 },
     visible: {
       opacity: 1,
       scale: 1,
-      transition: { type: "spring", stiffness: 200, damping: 10 }
+      transition: { type: "spring", stiffness: 100, damping: 12 }
     }
   };
 
@@ -83,9 +83,9 @@ const Skills = () => {
                     className={styles.badge}
                     variants={badgeVariants}
                     whileHover={{ 
-                      scale: 1.1, 
-                      y: -5, 
-                      rotate: idx % 2 === 0 ? 3 : -3 
+                      scale: 1.05, 
+                      y: -3, 
+                      rotate: idx % 2 === 0 ? 2 : -2 
                     }}
                     whileTap={{ scale: 0.95 }}
                   >
