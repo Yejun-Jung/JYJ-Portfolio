@@ -59,6 +59,16 @@ const miniProjectsData = [
     icon: "wifi",
     iconColor: "#f87171",
   },
+  {
+    id: 7,
+    category: "개인 프로젝트 · 웹 스크래핑 기반 검색 서비스",
+    title: "지식백과 검색기",
+    description: "네이버 지식백과 API와 BeautifulSoup을 활용한 검색 및 즐겨찾기 서비스.",
+    tags: ["PYTHON", "FASTAPI", "MONGODB", "BEAUTIFULSOUP", "VERCEL"],
+    githubUrl: "https://github.com/Yejun-Jung/jyj-dictionary-project",
+    icon: "search",
+    iconColor: "#2db400",
+  },
 ];
 
 export default miniProjectsData;

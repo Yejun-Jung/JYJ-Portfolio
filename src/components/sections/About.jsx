@@ -13,20 +13,20 @@ const About = () => {
     };
 
     const itemVariants = {
-        hidden: { opacity: 0, y: 30 },
+        hidden: { opacity: 0, y: 20 },
         visible: {
             opacity: 1,
             y: 0,
-            transition: { duration: 0.6, ease: "easeOut" },
+            transition: { type: "spring", stiffness: 70, damping: 14 },
         },
     };
 
     const linkVariants = {
-        hidden: { opacity: 0, x: 30 },
+        hidden: { opacity: 0, x: 20 },
         visible: {
             opacity: 1,
             x: 0,
-            transition: { duration: 0.6, ease: "easeOut" },
+            transition: { type: "spring", stiffness: 70, damping: 14 },
         },
     };
 
@@ -131,7 +131,7 @@ const About = () => {
                             rel="noreferrer"
                             className={styles.linkCard}
                             variants={linkVariants}
-                            whileHover={{ scale: 1.02 }}
+                            whileHover={{ scale: 1.01, y: -2 }}
                             whileTap={{ scale: 0.98 }}
                         >
                             <div className={styles.linkHeader}>
@@ -149,7 +149,7 @@ const About = () => {
                             rel="noreferrer"
                             className={styles.linkCard}
                             variants={linkVariants}
-                            whileHover={{ scale: 1.02 }}
+                            whileHover={{ scale: 1.01, y: -2 }}
                             whileTap={{ scale: 0.98 }}
                         >
                             <div className={styles.linkHeader}>

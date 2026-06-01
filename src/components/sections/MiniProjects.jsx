@@ -10,8 +10,8 @@ const MiniProjects = () => {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 70, damping: 14 } },
   };
 
   const lineVariants = {
@@ -43,7 +43,7 @@ const MiniProjects = () => {
             <motion.div
               key={project.id}
               variants={itemVariants}
-              whileHover={{ scale: 1.03, y: -5 }}
+              whileHover={{ y: -5, scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
               <MiniProjectCard project={project} />
