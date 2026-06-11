@@ -69,6 +69,16 @@ const miniProjectsData = [
     icon: "search",
     iconColor: "#2db400",
   },
+    {
+    id: 8,
+    category: "개인 프로젝트 · 프론트엔드 UI/UX 고도화",
+    title: "CineLog (영화 리뷰 다이어리)",
+    description: "로컬 스토리지를 활용한 영화 리뷰 CRUD 기능과, 카드 모핑(Morphing) 트랜지션 및 자동 스크롤 등 고도화된 인터랙션을 적용한 리뷰 관리 앱.",
+    tags: ["REACT", "VITE", "JAVASCRIPT", "CSS", "LOCALSTORAGE"],
+    githubUrl: "https://github.com/Yejun-Jung/ai-prompt-coding-evaluation",
+    icon: "movie",
+    iconColor: "#BB86FC",
+  },
 ];
 
 export default miniProjectsData;
