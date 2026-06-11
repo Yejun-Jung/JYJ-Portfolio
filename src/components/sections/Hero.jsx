@@ -7,9 +7,9 @@ const codeLines = [
   { parts: [{ cls: "tx", text: " name" }, { cls: "pl", text: ": " }, { cls: "str", text: "'정예준'" }, { cls: "pl", text: "," }] },
   { parts: [{ cls: "tx", text: " role" }, { cls: "pl", text: ": " }, { cls: "str", text: "'풀스택 개발자'" }, { cls: "pl", text: "," }] },
   { parts: [{ cls: "tx", text: " stack" }, { cls: "pl", text: ": [" }] },
-  { parts: [{ cls: "str", text: " 'React'" }, { cls: "pl", text: ", " }, { cls: "str", text: "'Node.js'" }, { cls: "pl", text: "," }] },
-  { parts: [{ cls: "str", text: " 'TypeScript'" }, { cls: "pl", text: ", " }, { cls: "str", text: "'Python'" }] },
-  { parts: [{ cls: "pl", text: " ]," }] },
+  { parts: [{ cls: "str", text: " 'React'" }, { cls: "pl", text: ", " }, { cls: "str", text: "'JavaScript'" }, { cls: "pl", text: ", " }, { cls: "str", text: "'SCSS'" }, { cls: "pl", text: "," }] }, 
+  { parts: [{ cls: "str", text: " 'Python'" }, { cls: "pl", text: ", " }, { cls: "str", text: "'FastAPI'" }, { cls: "pl", text: ", " }, { cls: "str", text: "'MongoDB'" }, { cls: "pl", text: "," }] },
+  { parts: [{ cls: "str", text: " 'OpenCV'" }, { cls: "pl", text: ", " }, { cls: "str", text: "'Vercel'" }, { cls: "pl", text: " ]," }] },
   { parts: [{ cls: "tx", text: " passion" }, { cls: "pl", text: ": " }, { cls: "str", text: "'UX & 클린코드'" }] },
   { parts: [{ cls: "pl", text: "}" }] },
 ];
@@ -34,15 +34,15 @@ const Hero = () => {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 80, damping: 12 } }
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 70, damping: 14 } }
   };
 
   const editorVariants = {
-    hidden: { opacity: 0, x: 50, scale: 0.95 },
+    hidden: { opacity: 0, x: 30, scale: 0.98 },
     visible: {
       opacity: 1, x: 0, scale: 1,
-      transition: { type: "spring", bounce: 0.3, duration: 0.8, delay: 0.4 }
+      transition: { type: "spring", stiffness: 60, damping: 15, delay: 0.3 }
     }
   };
 
