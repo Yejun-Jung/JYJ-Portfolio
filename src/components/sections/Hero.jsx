@@ -7,7 +7,7 @@ const codeLines = [
   { parts: [{ cls: "tx", text: " name" }, { cls: "pl", text: ": " }, { cls: "str", text: "'정예준'" }, { cls: "pl", text: "," }] },
   { parts: [{ cls: "tx", text: " role" }, { cls: "pl", text: ": " }, { cls: "str", text: "'풀스택 개발자'" }, { cls: "pl", text: "," }] },
   { parts: [{ cls: "tx", text: " stack" }, { cls: "pl", text: ": [" }] },
-  { parts: [{ cls: "str", text: " 'React'" }, { cls: "pl", text: ", " }, { cls: "str", text: "'JavaScript'" }, { cls: "pl", text: ", " }, { cls: "str", text: "'SCSS'" }, { cls: "pl", text: "," }] }, 
+  { parts: [{ cls: "str", text: " 'React'" }, { cls: "pl", text: ", " }, { cls: "str", text: "'JavaScript'" }, { cls: "pl", text: ", " }, { cls: "str", text: "'SCSS'" }, { cls: "pl", text: "," }, { cls: "str", text: "'TypsScript'" }, { cls: "pl", text: "," }] }, 
   { parts: [{ cls: "str", text: " 'Python'" }, { cls: "pl", text: ", " }, { cls: "str", text: "'FastAPI'" }, { cls: "pl", text: ", " }, { cls: "str", text: "'MongoDB'" }, { cls: "pl", text: "," }] },
   { parts: [{ cls: "str", text: " 'OpenCV'" }, { cls: "pl", text: ", " }, { cls: "str", text: "'Vercel'" }, { cls: "pl", text: " ]," }] },
   { parts: [{ cls: "tx", text: " passion" }, { cls: "pl", text: ": " }, { cls: "str", text: "'UX & 클린코드'" }] },

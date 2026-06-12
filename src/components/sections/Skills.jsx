@@ -3,7 +3,7 @@ import styles from "./Skills.module.scss";
 
 const Skills = () => {
   const skillsData = [
-    { id: "frontend", title: "FRONTEND", items: ["React.js", "Next.js", "JavaScript", "Tailwind CSS", "SCSS"] },
+    { id: "frontend", title: "FRONTEND", items: ["React.js", "Next.js", "JavaScript", "Tailwind CSS", "SCSS", "TypeScript"] },
     { id: "tools", title: "TOOLS", items: ["Figma", "Notion"] },
     { id: "backend", title: "BACKEND", items: ["Python", "FastAPI", "Node.js", "MongoDB", "MySQL", "Docker", "DBeaver"] },
     { id: "vcs", title: "VCS", items: ["GitHub"] },

@@ -144,7 +144,7 @@ const About = () => {
                         </motion.a>
 
                         <motion.a
-                            href="https://www.notion.so/2ff298159077803b9cdfc46e090d7e15"
+                            href="https://app.notion.com/p/37d29815907780f0be20c43b7ecdd35e?source=copy_link"
                             target="_blank"
                             rel="noreferrer"
                             className={styles.linkCard}
@@ -158,7 +158,7 @@ const About = () => {
                                 </svg>
                                 <span className={styles.linkTitle}>Notion</span>
                             </div>
-                            <p className={styles.linkDesc}>기술 블로그, 회고록, 업무 툴킷 및 학습 자료를 정리한 개인 위키입니다. 개발 철학과 문제 해결 과정을 상세히 기록합니다.</p>
+                            <p className={styles.linkDesc}>프로젝트 경험, 기술 스택, 그리고 개발자로서의 핵심 역량과 강점을 상세하게 정리해 둔 노션 포트폴리오입니다.</p>
                         </motion.a>
                     </motion.div>
                 </div>

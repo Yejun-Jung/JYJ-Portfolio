@@ -50,6 +50,14 @@ const icons = {
       <path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/>
     </svg>
   ),
+  restroom: (
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="8" cy="6" r="2" />
+      <path d="M5 10h6v12h-2v-6H7v6H5z" />
+      <circle cx="16" cy="6" r="2" />
+      <path d="M14 10l-2 12h2v-6h2v6h2l-2-12z" />
+    </svg>
+  ),
 };
 
 const MiniProjectCard = ({ project }) => {
