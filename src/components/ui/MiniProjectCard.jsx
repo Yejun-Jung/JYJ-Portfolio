@@ -74,17 +74,19 @@ const MiniProjectCard = ({ project }) => {
 
   return (
     <a href={githubUrl} target="_blank" rel="noreferrer" className={styles.card}>
-      {difficulty && (
-        <div className={styles.difficultyBadge} style={{ color: getDifficultyColor(difficulty), borderColor: getDifficultyColor(difficulty) }}>
-          난이도: {difficulty}
-        </div>
-      )}
       <div className={styles.top}>
         <div className={styles.iconBox} style={{ color: iconColor }}>
           {icons[icon]}
         </div>
         <div className={styles.info}>
-          <p className={styles.category}>{category}</p>
+          <div className={styles.categoryRow}>
+            <p className={styles.category}>{category}</p>
+            {difficulty && (
+              <div className={styles.difficultyBadge} style={{ color: getDifficultyColor(difficulty), borderColor: getDifficultyColor(difficulty) }}>
+                난이도: {difficulty}
+              </div>
+            )}
+          </div>
           <h3 className={styles.title}>{title}</h3>
           <p className={styles.desc}>{description}</p>
           <div className={styles.tags}>

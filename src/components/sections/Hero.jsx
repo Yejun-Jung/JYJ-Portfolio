@@ -89,20 +89,35 @@ const Hero = () => {
               <span className={styles.filename}>portfolio.js</span>
             </div>
             <div className={styles.code}>
-              {codeLines.slice(0, visibleLines).map((line, i) => (
-                <div key={i} className={styles.codeLine}>
-                  <span className={styles.ln}>{i + 1}</span>
-                  {line.parts.map((part, j) => (
-                    <span key={j} className={styles[part.cls]}>{part.text}</span>
-                  ))}
-                </div>
-              ))}
-              {visibleLines < codeLines.length && (
-                <div className={styles.codeLine}>
-                  <span className={styles.ln}>{visibleLines + 1}</span>
-                  <span className={styles.cursor}>|</span>
-                </div>
-              )}
+              {/* 레이아웃 높이를 미리 잡아두기 위한 투명한 뼈대 (절대 안흔들림) */}
+              <div className={styles.placeholderBlock} aria-hidden="true">
+                {codeLines.map((line, i) => (
+                  <div key={`ph-${i}`} className={styles.codeLine}>
+                    <span className={styles.ln}>{i + 1}</span>
+                    {line.parts.map((part, j) => (
+                      <span key={`php-${j}`} className={styles[part.cls]}>{part.text}</span>
+                    ))}
+                  </div>
+                ))}
+              </div>
+
+              {/* 실제로 타이핑쳐지며 나타나는 애니메이션 블록 */}
+              <div className={styles.typingBlock}>
+                {codeLines.slice(0, visibleLines).map((line, i) => (
+                  <div key={i} className={styles.codeLine}>
+                    <span className={styles.ln}>{i + 1}</span>
+                    {line.parts.map((part, j) => (
+                      <span key={j} className={styles[part.cls]}>{part.text}</span>
+                    ))}
+                  </div>
+                ))}
+                {visibleLines < codeLines.length && (
+                  <div className={styles.codeLine}>
+                    <span className={styles.ln}>{visibleLines + 1}</span>
+                    <span className={styles.cursor}>|</span>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </motion.div>
