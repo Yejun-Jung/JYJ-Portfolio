@@ -61,10 +61,24 @@ const icons = {
 };
 
 const MiniProjectCard = ({ project }) => {
-  const { category, title, description, tags, githubUrl, icon, iconColor } = project;
+  const { category, title, description, tags, githubUrl, icon, iconColor, difficulty } = project;
+
+  const getDifficultyColor = (diff) => {
+    switch(diff) {
+      case '상': return '#ef4444';
+      case '중': return '#f59e0b';
+      case '하': return '#10b981';
+      default: return 'var(--color-text-secondary)';
+    }
+  };
 
   return (
     <a href={githubUrl} target="_blank" rel="noreferrer" className={styles.card}>
+      {difficulty && (
+        <div className={styles.difficultyBadge} style={{ color: getDifficultyColor(difficulty), borderColor: getDifficultyColor(difficulty) }}>
+          난이도: {difficulty}
+        </div>
+      )}
       <div className={styles.top}>
         <div className={styles.iconBox} style={{ color: iconColor }}>
           {icons[icon]}

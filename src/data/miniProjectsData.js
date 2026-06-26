@@ -8,6 +8,7 @@ const miniProjectsData = [
     githubUrl: "https://www.notion.so/32a29815907780d7bb53c7fb2ea59fc6?source=copy_link",
     icon: "car",
     iconColor: "#9b8fe8",
+    difficulty: "상",
   },
   {
     id: 2,
@@ -18,6 +19,7 @@ const miniProjectsData = [
     githubUrl: "https://github.com/Yejun-Jung/todolist-ver2",
     icon: "check",
     iconColor: "#4ade80",
+    difficulty: "중",
   },
   {
     id: 3,
@@ -28,6 +30,7 @@ const miniProjectsData = [
     githubUrl: "https://github.com/Yejun-Jung/end-word-game",
     icon: "chat",
     iconColor: "#facc15",
+    difficulty: "하",
   },
   {
     id: 4,
@@ -38,6 +41,7 @@ const miniProjectsData = [
     githubUrl: "https://github.com/Yejun-Jung?tab=repositories",
     icon: "clock",
     iconColor: "#fb923c",
+    difficulty: "하",
   },
   {
     id: 5,
@@ -48,6 +52,7 @@ const miniProjectsData = [
     githubUrl: "https://github.com/Yejun-Jung/emotion-diary",
     icon: "diary",
     iconColor: "#f472b6",
+    difficulty: "중",
   },
   {
     id: 6,
@@ -58,6 +63,7 @@ const miniProjectsData = [
     githubUrl: "https://github.com/Yejun-Jung/new-api",
     icon: "restroom",
     iconColor: "#3b82f6",
+    difficulty: "중",
   },
   {
     id: 7,
@@ -68,6 +74,7 @@ const miniProjectsData = [
     githubUrl: "https://github.com/Yejun-Jung/jyj-dictionary-project",
     icon: "search",
     iconColor: "#2db400",
+    difficulty: "상",
   },
     {
     id: 8,
@@ -78,6 +85,7 @@ const miniProjectsData = [
     githubUrl: "https://github.com/Yejun-Jung/ai-prompt-coding-evaluation",
     icon: "movie",
     iconColor: "#BB86FC",
+    difficulty: "상",
   },
 ];
 

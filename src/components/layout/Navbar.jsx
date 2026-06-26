@@ -72,6 +72,9 @@ const Navbar = ({ theme, toggleTheme, activeMenu, setActiveMenu }) => {
                 </a>
               </li>
             ))}
+            <li className={styles.mobileResumeItem}>
+              <a href="#" className={styles.mobileResumeBtn}>이력서</a>
+            </li>
           </ul>
 
           <div className={styles.actions}>
