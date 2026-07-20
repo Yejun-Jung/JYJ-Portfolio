@@ -1,6 +1,22 @@
 const projectsData = [
   {
     id: 1,
+    category: "팀 프로젝트 · 프론트엔드 단독 구현",
+    title: "NexusHub PROJECT",
+    description: [
+      "4인 팀 협업으로 진행된 스마트 택배 허브 웹 애플리케이션으로, 프론트엔드(React, TypeScript) 환경만으로 구현된 프로젝트입니다.",
+      "배송 조회 타임라인, 일반/관리자 로그인 폼, 메인 히어로 무한 슬라이더 및 반응형 공통 레이아웃 개발을 담당했습니다.",
+      "Vercel 배포 과정에서 메타태그(SEO) 및 Open Graph 세팅을 주도하고, 반응형 UI 깨짐 현상 등 실무적인 트러블슈팅을 완수했습니다.",
+    ],
+    tags: ["REACT", "TYPESCRIPT", "VITE", "SCSS", "FIGMA", "VERCEL"],
+    githubUrl: "https://github.com/seokhyeon09/TeamProject-Responsive_Logistics_System_Project",
+    notionUrl: "https://notion.com/p/KDT-1-3835b18cdc3080428fa3e5d938d98c71",
+    liveUrl: "https://team-project-nexus-hub.vercel.app/",
+    thumbType: "nx",
+    direction: "right",
+  },
+  {
+    id: 2,
     category: "웹 애플리케이션",
     title: "SimplePaws PROJECT",
     description: [
@@ -24,10 +40,10 @@ const projectsData = [
       "https://www.notion.so/Simple-Paws-32f298159077804b8e29e05045aa215c?source=copy_link",
     liveUrl: "http://simplepaws.kro.kr/",
     thumbType: "sp",
-    direction: "right",
+    direction: "left",
   },
   {
-    id: 2,
+    id: 3,
     category: "웹 애플리케이션",
     title: "TOCOBO H&M PROJECT",
     description: [
@@ -42,7 +58,7 @@ const projectsData = [
       "https://www.notion.so/TOCOBO-31029815907780ccb2cfe60632e48dce?source=copy_link",
     liveUrl: "https://h-m-tocobo.vercel.app/",
     thumbType: "hm",
-    direction: "left",
+    direction: "right",
   },
 ];
 
