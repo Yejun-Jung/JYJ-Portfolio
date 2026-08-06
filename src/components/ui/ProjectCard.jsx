@@ -2,6 +2,7 @@ import styles from "./ProjectCard.module.scss";
 import hmThumb from "../../assets/images/hm-thumb.png";
 import spThumb from "../../assets/images/sp-thumb.png";
 import nxThumb from "../../assets/images/nx-thumb.png";
+import shThumb from "../../assets/images/sh-thumb.png";
 
 const ProjectCard = ({ project }) => {
   const { category, title, description, tags, githubUrl, notionUrl, liveUrl, thumbType, direction } = project;
@@ -16,6 +17,9 @@ const ProjectCard = ({ project }) => {
       )}
       {thumbType === "nx" && (
         <img src={nxThumb} alt="NexusHub Project" className={`${styles.thumbImg} ${styles.nxThumb}`} />
+      )}
+      {thumbType === "sh" && (
+        <img src={shThumb} alt="SmartHR Project" className={styles.thumbImg} />
       )}
     </div>
   );

@@ -1,5 +1,31 @@
 const projectsData = [
   {
+    id: 4,
+    category: "팀 프로젝트 · 풀스택 웹 서비스",
+    title: "SmartHR PROJECT",
+    description: [
+      "4인 팀 협업으로 구축한 Next.js & Spring Boot 기반 풀스택 통합 인사관리(ERP) 웹 서비스로,",
+      "복잡한 인사 데이터를 체계적으로 통합하고 강력한 권한 제어를 통해 업무 효율성을 극대화했습니다.",
+      "일반 사원용 화면 전체 개발 및 관리자 권한별 화면 분리 로직을 프론트엔드 단에서 제어했으며,",
+      "방대한 인사 데이터를 모바일 카드뷰로 변환하는 반응형 시스템을 전담했습니다."
+    ],
+    tags: [
+      "NEXT.JS",
+      "REACT",
+      "TYPESCRIPT",
+      "TAILWIND CSS",
+      "SPRING BOOT",
+      "MYSQL",
+      "JWT",
+      "FIGMA"
+    ],
+    githubUrl: "https://github.com/Yejun-Jung/SmartRAD",
+    notionUrl: "https://app.notion.com/p/SmartRAD-1-398d4d33801680ddac48dd346f408d9a?pvs=32",
+    liveUrl: "https://smart-hr.site/",
+    thumbType: "sh",
+    direction: "left",
+  },
+  {
     id: 1,
     category: "팀 프로젝트 · 프론트엔드 단독 구현",
     title: "NexusHub PROJECT",
