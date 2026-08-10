@@ -100,7 +100,6 @@
   color: var(--color-text-secondary);
 }
 
-// 큰 태블릿
 @media (max-width: 1300px) {
   .iconBox {
     width: 90px;
@@ -112,7 +111,6 @@
   }
 }
 
-// 태블릿
 @media (max-width: 1024px) {
   .iconBox {
     width: 80px;
@@ -128,7 +126,6 @@
   }
 }
 
-// 모바일
 @media (max-width: 768px) {
   .card {
     padding: 18px;

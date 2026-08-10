@@ -9,7 +9,7 @@ const codeLines = [
   { parts: [{ cls: "tx", text: " skills" }, { cls: "pl", text: ": {" }] },
   { parts: [{ cls: "tx", text: "   frontend" }, { cls: "pl", text: ": [" }, { cls: "str", text: "'React'" }, { cls: "pl", text: ", " }, { cls: "str", text: "'Next.js'" }, { cls: "pl", text: ", " }, { cls: "str", text: "'TypeScript'" }, { cls: "pl", text: ", " }, { cls: "str", text: "'Tailwind CSS'" }, { cls: "pl", text: "]," }] },
   { parts: [{ cls: "tx", text: "   backend" }, { cls: "pl", text: ": [" }, { cls: "str", text: "'Python'" }, { cls: "pl", text: ", " }, { cls: "str", text: "'FastAPI'" }, { cls: "pl", text: ", " }, { cls: "str", text: "'Node.js'" }, { cls: "pl", text: ", " }, { cls: "str", text: "'Docker'" }, { cls: "pl", text: "]," }] },
-  { parts: [{ cls: "tx", text: "   tools" }, { cls: "pl", text: ": [" }, { cls: "str", text: "'GitHub'" }, { cls: "pl", text: ", " }, { cls: "str", text: "'Vercel'" }, { cls: "pl", text: ", " }, { cls: "str", text: "'Figma'" }, { cls: "pl", text: "]" }] },
+  { parts: [{ cls: "tx", text: "   tools" }, { cls: "pl", text: ": [" }, { cls: "str", text: "'GitHub'" }, { cls: "pl", text: ", " }, { cls: "str", text: "'Vercel'" }, { cls: "pl", text: ", " }, { cls: "str", text: "'Figma'" }, { cls: "pl", text: ", " }, { cls: "str", text: "'Notion'" }, { cls: "pl", text: "]" }] },
   { parts: [{ cls: "tx", text: " }" }, { cls: "pl", text: "," }] },
   { parts: [{ cls: "tx", text: " passion" }, { cls: "pl", text: ": " }, { cls: "str", text: "'UX & 클린코드'" }] },
   { parts: [{ cls: "pl", text: "}" }] },
@@ -89,7 +89,6 @@ const Hero = () => {
               <span className={styles.filename}>portfolio.js</span>
             </div>
             <div className={styles.code}>
-              {/* 레이아웃 높이를 미리 잡아두기 위한 투명한 뼈대 (절대 안흔들림) */}
               <div className={styles.placeholderBlock} aria-hidden="true">
                 {codeLines.map((line, i) => (
                   <div key={`ph-${i}`} className={styles.codeLine}>
@@ -101,7 +100,6 @@ const Hero = () => {
                 ))}
               </div>
 
-              {/* 실제로 타이핑쳐지며 나타나는 애니메이션 블록 */}
               <div className={styles.typingBlock}>
                 {codeLines.slice(0, visibleLines).map((line, i) => (
                   <div key={i} className={styles.codeLine}>

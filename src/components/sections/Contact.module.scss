@@ -191,7 +191,6 @@
   margin: 0;
 }
 
-// 큰 태블릿
 @media (max-width: 1300px) {
   .container {
     height: auto;
@@ -208,7 +207,6 @@
   }
 }
 
-// 태블릿
 @media (max-width: 1024px) {
   .contactSection {
     padding: 80px 0;
@@ -242,7 +240,6 @@
   }
 }
 
-// 모바일
 @media (max-width: 768px) {
   .contactSection {
     padding: 60px 0;

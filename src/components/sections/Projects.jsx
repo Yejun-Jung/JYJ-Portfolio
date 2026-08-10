@@ -4,18 +4,16 @@ import ProjectCard from "../ui/ProjectCard";
 import projectsData from "../../data/projectsData";
 
 const Projects = () => {
-    // 전체 컨테이너 (자식 요소들 순차적 실행)
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
             transition: {
-                staggerChildren: 0.2, // 0.2초 간격으로 자식 애니메이션 실행
+                staggerChildren: 0.2,
             },
         },
     };
 
-    // 타이틀 애니메이션 (왼쪽에서 오른쪽으로 슬라이드)
     const titleVariants = {
         hidden: { opacity: 0, x: -30 },
         visible: {
@@ -25,7 +23,6 @@ const Projects = () => {
         },
     };
 
-    // 구분선 애니메이션 (길이가 길어지는 효과)
     const lineVariants = {
         hidden: { scaleX: 0, transformOrigin: "left", opacity: 0 },
         visible: {
@@ -35,7 +32,6 @@ const Projects = () => {
         },
     };
 
-    // 서브 텍스트 애니메이션
     const subVariants = {
         hidden: { opacity: 0, y: 20 },
         visible: {
@@ -45,7 +41,6 @@ const Projects = () => {
         },
     };
 
-    // 카드 애니메이션 (자연스럽고 과하지 않은 등장)
     const cardVariants = {
         hidden: (index) => ({
             opacity: 0,
@@ -55,7 +50,7 @@ const Projects = () => {
             opacity: 1,
             y: 0,
             transition: {
-                type: "spring", // 부드러운 스프링
+                type: "spring",
                 stiffness: 70,
                 damping: 14,
                 mass: 1,
@@ -88,7 +83,7 @@ const Projects = () => {
                             key={project.id}
                             custom={index}
                             variants={cardVariants}
-                            whileHover={{ y: -5, scale: 1.01 }} // 과하지 않게 살짝 떠오르는 효과
+                            whileHover={{ y: -5, scale: 1.01 }}
                             whileTap={{ scale: 0.98 }}
                         >
                             <ProjectCard project={project} />
