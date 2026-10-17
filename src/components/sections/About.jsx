@@ -36,7 +36,7 @@ const About = () => {
                 className={styles.inner}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: false, margin: "0px 0px -100px 0px", amount: 0.1 }}
+                viewport={{ once: true, margin: "0px 0px -100px 0px", amount: 0.1 }}
                 variants={containerVariants}
             >
                 <div className={styles.header}>
@@ -47,6 +47,13 @@ const About = () => {
                 </div>
                 <motion.p className={styles.sub} variants={itemVariants}>
                     ㄴ 저에 대해 소개합니다.
+                </motion.p>
+                <motion.p className={styles.intro} variants={itemVariants}>
+                    기획부터 배포까지 끝까지 책임지는 <span className={styles.accent}>풀스택 개발자</span>입니다.
+                    <br />
+                    팀 프로젝트 4건, 개인 프로젝트 6건으로 6개 서비스를 배포했습니다.
+                    <br />
+                    문제가 생기면 원인부터 찾아 해결하는 방식으로 일합니다.
                 </motion.p>
 
                 <div className={styles.content}>
@@ -95,7 +102,7 @@ const About = () => {
                             </div>
                             <div className={styles.cardInfo}>
                                 <p className={styles.label}>연락처</p>
-                                <p className={styles.value}>010-6474-3243</p>
+                                <p className={styles.value}><a href="tel:01064743243" className={styles.valueLink}>010-6474-3243</a></p>
                             </div>
                         </motion.div>
 
@@ -107,7 +114,7 @@ const About = () => {
                             </div>
                             <div className={styles.cardInfo}>
                                 <p className={styles.label}>이메일</p>
-                                <p className={styles.value}>once6474@naver.com</p>
+                                <p className={styles.value}><a href="mailto:once6474@naver.com" className={styles.valueLink}>once6474@naver.com</a></p>
                             </div>
                         </motion.div>
 
@@ -119,7 +126,7 @@ const About = () => {
                             </div>
                             <div className={styles.cardInfo}>
                                 <p className={styles.label}>학력</p>
-                                <p className={styles.value}>경북대학교 (소프트웨어융합과)</p>
+                                <p className={styles.value}>경복대학교 (소프트웨어융합과)</p>
                             </div>
                         </motion.div>
                     </motion.div>
@@ -140,11 +147,11 @@ const About = () => {
                                 </svg>
                                 <span className={styles.linkTitle}>GitHub</span>
                             </div>
-                            <p className={styles.linkDesc}>진행 중인 모든 프로젝트의 소스 코드와 커밋 히스토리를 <br />확인하실 수 있습니다. <br />오픈소스 기여와 개인 학습 로그가 담겨있습니다.</p>
+                            <p className={styles.linkDesc}>프로젝트 소스 코드와 커밋 히스토리를 확인하실 수 있습니다.</p>
                         </motion.a>
 
                         <motion.a
-                            href="https://app.notion.com/p/37d29815907780f0be20c43b7ecdd35e?source=copy_link"
+                            href="https://app.notion.com/p/Full-stack-Developer-ef2298159077826aaab181a3ea59cfc2?source=copy_link"
                             target="_blank"
                             rel="noreferrer"
                             className={styles.linkCard}
