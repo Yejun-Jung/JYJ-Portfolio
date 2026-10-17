@@ -38,17 +38,10 @@
 
 .content {
   display: grid;
-  grid-template-columns: auto auto auto;
-  justify-content: start;
-  row-gap: 120px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   column-gap: 80px;
+  row-gap: 80px;
 }
-
-.frontend { grid-area: 1 / 1 / 2 / 2; }
-.tools { grid-area: 1 / 2 / 2 / 3; }
-.backend { grid-area: 2 / 1 / 3 / 2; }
-.vcs { grid-area: 2 / 2 / 3 / 3; }
-.deployment { grid-area: 2 / 3 / 3 / 4; }
 
 .categoryGroup {
   display: flex;
@@ -83,12 +76,59 @@
 }
 
 .badge {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
   padding: 10px 16px;
   background: var(--color-info-bg);
   border: 1px solid var(--color-border);
   border-radius: 4px;
-  font-size: 25px;
+  font-size: 20px;
   color: var(--color-text-primary);
+  outline: none;
+}
+
+.logo {
+  width: 0.9em;
+  height: 0.9em;
+  flex-shrink: 0;
+  color: var(--color-text-primary);
+}
+
+.tip {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 0;
+  transform: translateY(4px);
+  width: max-content;
+  max-width: 320px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: var(--color-text-primary);
+  color: var(--color-bg);
+  font-size: 14px;
+  line-height: 1.5;
+  white-space: normal;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  z-index: 5;
+}
+
+.categoryGroup:nth-child(even) .tip {
+  left: auto;
+  right: 0;
+}
+
+.badge:hover .tip,
+.badge:focus .tip {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.badge:focus-visible {
+  border-color: var(--color-primary);
 }
 
 @media (max-width: 1300px) {
@@ -124,16 +164,10 @@
   }
 
   .content {
-    grid-template-columns: auto auto;
     column-gap: 40px;
     row-gap: 60px;
   }
 
-  .frontend { grid-area: 1 / 1 / 2 / 2; }
-  .tools    { grid-area: 1 / 2 / 2 / 3; }
-  .backend  { grid-area: 2 / 1 / 3 / 2; }
-  .vcs      { grid-area: 2 / 2 / 3 / 3; }
-  .deployment { grid-area: 3 / 1 / 4 / 2; }
 
   .badge {
     font-size: 16px;
@@ -164,13 +198,22 @@
     row-gap: 40px;
   }
 
-  .frontend, .tools, .backend, .vcs, .deployment {
-    grid-area: auto;
-  }
-
   .badge {
     font-size: 14px;
     padding: 8px 12px;
+    position: static;
+  }
+
+  .badgeList {
+    position: relative;
+  }
+
+  .tip,
+  .categoryGroup:nth-child(even) .tip {
+    font-size: 12px;
+    left: 0;
+    right: auto;
+    max-width: 100%;
   }
 
   .categoryTitle {
