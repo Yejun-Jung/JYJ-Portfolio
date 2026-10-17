@@ -1,22 +1,38 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import styles from "./Hero.module.scss";
 
 const codeLines = [
   { parts: [{ cls: "kw", text: "const " }, { cls: "fn", text: "developer" }, { cls: "pl", text: " = {" }] },
-  { parts: [{ cls: "tx", text: " name" }, { cls: "pl", text: ": " }, { cls: "str", text: "'정예준'" }, { cls: "pl", text: "," }] },
-  { parts: [{ cls: "tx", text: " role" }, { cls: "pl", text: ": " }, { cls: "str", text: "'풀스택 개발자'" }, { cls: "pl", text: "," }] },
-  { parts: [{ cls: "tx", text: " skills" }, { cls: "pl", text: ": {" }] },
-  { parts: [{ cls: "tx", text: "   frontend" }, { cls: "pl", text: ": [" }, { cls: "str", text: "'React'" }, { cls: "pl", text: ", " }, { cls: "str", text: "'Next.js'" }, { cls: "pl", text: ", " }, { cls: "str", text: "'TypeScript'" }, { cls: "pl", text: ", " }, { cls: "str", text: "'Tailwind CSS'" }, { cls: "pl", text: "]," }] },
-  { parts: [{ cls: "tx", text: "   backend" }, { cls: "pl", text: ": [" }, { cls: "str", text: "'Python'" }, { cls: "pl", text: ", " }, { cls: "str", text: "'FastAPI'" }, { cls: "pl", text: ", " }, { cls: "str", text: "'Node.js'" }, { cls: "pl", text: ", " }, { cls: "str", text: "'Docker'" }, { cls: "pl", text: "]," }] },
-  { parts: [{ cls: "tx", text: "   tools" }, { cls: "pl", text: ": [" }, { cls: "str", text: "'GitHub'" }, { cls: "pl", text: ", " }, { cls: "str", text: "'Vercel'" }, { cls: "pl", text: ", " }, { cls: "str", text: "'Figma'" }, { cls: "pl", text: ", " }, { cls: "str", text: "'Notion'" }, { cls: "pl", text: "]" }] },
-  { parts: [{ cls: "tx", text: " }" }, { cls: "pl", text: "," }] },
-  { parts: [{ cls: "tx", text: " passion" }, { cls: "pl", text: ": " }, { cls: "str", text: "'UX & 클린코드'" }] },
+  { parts: [{ cls: "tx", text: "  name" }, { cls: "pl", text: ": " }, { cls: "str", text: "'정예준'" }, { cls: "pl", text: "," }] },
+  { parts: [{ cls: "tx", text: "  role" }, { cls: "pl", text: ": " }, { cls: "str", text: "'풀스택 개발자'" }, { cls: "pl", text: "," }] },
+  { parts: [{ cls: "tx", text: "  deployed" }, { cls: "pl", text: ": " }, { cls: "num", text: "6" }, { cls: "pl", text: "," }, { cls: "cm", text: "  // 현재 접속 가능한 서비스" }] },
+  { parts: [{ cls: "tx", text: "  projects" }, { cls: "pl", text: ": { " }, { cls: "tx", text: "team" }, { cls: "pl", text: ": " }, { cls: "num", text: "4" }, { cls: "pl", text: ", " }, { cls: "tx", text: "solo" }, { cls: "pl", text: ": " }, { cls: "num", text: "6" }, { cls: "pl", text: " }," }] },
+  { parts: [{ cls: "tx", text: "  focus" }, { cls: "pl", text: ": " }, { cls: "str", text: "'기획부터 배포까지'" }] },
   { parts: [{ cls: "pl", text: "}" }] },
 ];
 
 const Hero = () => {
   const [visibleLines, setVisibleLines] = useState(0);
+  const editorRef = useRef(null);
+
+  const canTilt = () =>
+    window.matchMedia("(hover: hover) and (prefers-reduced-motion: no-preference)").matches;
+
+  const handleTilt = (e) => {
+    if (!canTilt()) return;
+    const el = editorRef.current;
+    const rect = el.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    el.style.setProperty("--mx", x);
+    el.style.setProperty("--my", y);
+  };
+
+  const resetTilt = () => {
+    editorRef.current.style.removeProperty("--mx");
+    editorRef.current.style.removeProperty("--my");
+  };
 
   useEffect(() => {
     if (visibleLines >= codeLines.length) return;
@@ -55,7 +71,7 @@ const Hero = () => {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, margin: "0px 0px -100px 0px", amount: 0.1 }}
+          viewport={{ once: true, margin: "0px 0px -100px 0px", amount: 0.1 }}
         >
           <motion.span variants={itemVariants} className={styles.badge}>
             풀스택 개발자
@@ -65,7 +81,7 @@ const Hero = () => {
             <br />
             설계하는
             <br />
-            개발자 <span className={styles.name}>정예준</span> 입니다.
+            개발자 <span className={styles.name}>정예준</span>입니다.
           </motion.h1>
           <motion.div variants={itemVariants} className={styles.btns}>
             <a href="#projects" className={styles.btnPrimary}>작업물 보기</a>
@@ -78,15 +94,23 @@ const Hero = () => {
           variants={editorVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, margin: "0px 0px -100px 0px", amount: 0.1 }}
+          viewport={{ once: true, margin: "0px 0px -100px 0px", amount: 0.1 }}
           onViewportEnter={() => setVisibleLines(0)}
         >
-          <div className={styles.editor}>
+          <div
+            ref={editorRef}
+            className={styles.editor}
+            onMouseMove={handleTilt}
+            onMouseLeave={resetTilt}
+          >
+            <div className={styles.editorBg} />
             <div className={styles.titlebar}>
-              <span className={styles.dot} style={{ background: "#ff5f57" }} />
-              <span className={styles.dot} style={{ background: "#febc2e" }} />
-              <span className={styles.dot} style={{ background: "#28c840" }} />
-              <span className={styles.filename}>portfolio.js</span>
+              <div className={styles.titlebarItems}>
+                <span className={styles.dot} style={{ background: "#ff5f57" }} />
+                <span className={styles.dot} style={{ background: "#febc2e" }} />
+                <span className={styles.dot} style={{ background: "#28c840" }} />
+                <span className={styles.filename}>portfolio.js</span>
+              </div>
             </div>
             <div className={styles.code}>
               <div className={styles.placeholderBlock} aria-hidden="true">
@@ -107,12 +131,15 @@ const Hero = () => {
                     {line.parts.map((part, j) => (
                       <span key={j} className={styles[part.cls]}>{part.text}</span>
                     ))}
+                    {visibleLines >= codeLines.length && i === codeLines.length - 1 && (
+                      <span className={styles.cursor} />
+                    )}
                   </div>
                 ))}
                 {visibleLines < codeLines.length && (
                   <div className={styles.codeLine}>
                     <span className={styles.ln}>{visibleLines + 1}</span>
-                    <span className={styles.cursor}>|</span>
+                    <span className={styles.cursor} />
                   </div>
                 )}
               </div>
