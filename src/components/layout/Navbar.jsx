@@ -8,13 +8,14 @@ const Navbar = ({ theme, toggleTheme, activeMenu, setActiveMenu }) => {
     const startPosition = window.scrollY;
     const distance = targetPosition - startPosition;
     const duration = 600;
-    const startTime = performance.now();
+    let startTime = null;
 
     const easeInOutQuart = (t) => {
       return t < 0.5 ? 8 * t * t * t * t : 1 - Math.pow(-2 * t + 2, 4) / 2;
     };
 
     const scroll = (currentTime) => {
+      if (startTime === null) startTime = currentTime;
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
       const ease = easeInOutQuart(progress);
@@ -72,16 +73,12 @@ const Navbar = ({ theme, toggleTheme, activeMenu, setActiveMenu }) => {
                 </a>
               </li>
             ))}
-            <li className={styles.mobileResumeItem}>
-              <a href="#" className={styles.mobileResumeBtn}>이력서</a>
-            </li>
           </ul>
 
           <div className={styles.actions}>
             <button className={styles.themeToggle} onClick={toggleTheme}>
               {theme === "light" ? "D" : "L"}
             </button>
-            <a href="#" className={styles.resumeBtn}>이력서</a>
             <button
               className={styles.hamburger}
               onClick={() => setMenuOpen(!menuOpen)}
